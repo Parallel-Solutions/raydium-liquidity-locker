@@ -1,0 +1,33 @@
+[toolchain]
+
+[features]
+seeds = false
+skip-lint = false
+
+[programs.localnet]
+liquidity_locker = "LockgYZzP9P4AqsXU9jhLvnt88kefqJFeao7QKQRkCf"
+
+[programs.devnet]
+liquidity_locker = "LockgYZzP9P4AqsXU9jhLvnt88kefqJFeao7QKQRkCf"
+
+[programs.mainnet]
+liquidity_locker = "LockgYZzP9P4AqsXU9jhLvnt88kefqJFeao7QKQRkCf"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+#cluster = "Localnet"
+#wallet = "/home/bilal/.config/solana/id.json"
+
+#cluster = "devnet"
+#wallet = "./deployer.json"
+
+cluster = "mainnet"
+wallet = "./deployer.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
+program-lockPosition = "yarn run ts-node ./tasks/instructions/lockPosition.ts"
+program-unlockPosition = "yarn run ts-node ./tasks/instructions/unlockPosition.ts"
+program-claimFees = "yarn run ts-node ./tasks/instructions/claimFees.ts"

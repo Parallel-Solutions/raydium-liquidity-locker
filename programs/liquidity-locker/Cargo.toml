@@ -1,0 +1,22 @@
+[package]
+name = "liquidity-locker"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "liquidity_locker"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "0.29.0"
+anchor-spl = "0.29.0"
+spl-memo = "4.0.0"
+raydium-amm-v3 = {git = "https://github.com/mesh-protocol/raydium-clmm", branch = "master", features = ["cpi"]}
